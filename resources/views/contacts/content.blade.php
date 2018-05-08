@@ -339,6 +339,10 @@
 </div>
 
 <br>
+
+<br>
+
+<br>
             <div class="form-group">
              <div class="col-sm-10 col-sm-offset-2">
               <button class="btn btn-primary " name="submit" type="submit">
@@ -353,13 +357,7 @@
 
 <script>
 
-function select2(){
-
-    
-}
-
-
-    
+   
 function getstate(){
     
     $("#country").change(function(event){

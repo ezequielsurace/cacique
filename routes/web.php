@@ -37,9 +37,9 @@ Route::group([ 'prefix' => 'backend' ], function(){
 
 });
 
-Route::get('/show/contact','ContactsController@show');
+    Route::get('/show/contact','ContactsController@show');
 
-
+    Route::get('/show/{id}','ContactsController@getContact');
    
 	Route::post('/new','ContactsController@store');   
 

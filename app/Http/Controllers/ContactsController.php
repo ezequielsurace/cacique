@@ -82,14 +82,15 @@ class ContactsController extends Controller
 
     public function show()
     {
-      $data = Contact::join('address','contact.address_id','=','address.id')
+      $contact = Contact::join('address','contact.address_id','=','address.id')
           ->join('phone','phone.contact_id','=','contact.id')
           ->join('phone_type','phone.phone_type_id','=','phone_type.id')
           ->join('country','address.country_id','=','country.id')
           ->join('state','address.state_id','=','state.id')
           ->join('city','address.city_id','=','city.id')
           ->join('company','company.id','=','contact.company_id')
-          ->select(DB::raw('contact.name as name,
+          ->select(DB::raw('contact.id as id,
+                            contact.name as name,
                             contact.email as email,
                             phone.number as phone,
                             phone_type.name as phone_type,
@@ -101,10 +102,21 @@ class ContactsController extends Controller
                             city.name as city'))->get();
 
 
-      return $data; 
-
-         
-
+      return $contact; 
 
     }
+
+
+    public function getContact(Request $request, $id)
+    {
+        
+            $contact = Contact::contact($id);
+            
+            return response()->json($contact);
+        
+    
+    }
+
+
+
 }

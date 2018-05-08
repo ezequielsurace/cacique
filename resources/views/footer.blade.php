@@ -3,7 +3,7 @@
             <div class="container-fluid">
               <div class="row">
                 <div class="col-sm-6">
-                  <p>CaciqueSystem &copy; 2018</p>
+                  <p>Copyright 2018 &copy; CaciqueSystem</p>
                 </div>
                 <div class="col-sm-6 text-right">
                   <p>Design by <a href="https://www.linkedin.com/in/ezequiel-surace-2b344652" class="external">Ezequiel Surace</a></p>
