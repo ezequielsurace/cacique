@@ -107,12 +107,28 @@ class ContactsController extends Controller
     }
 
 
-    public function getContact(Request $request, $id)
+    public function index(Request $request, $id)
     {
         
             $contact = Contact::contact($id);
             
-            return response()->json($contact);
+
+      return view('profile.index', [
+          'id' => $id,
+          'name' => $contact->name,
+          'email' => $contact->email,
+          'birthdate' => $contact->birthdate,
+          'profile_image' => str_replace('public','storage',$contact->profile_image),
+          'phone' => $contact->phone,
+          'phone_type' => $contact->phone_type,
+          'company' => $contact->company,
+          'street_name' => $contact->street_name,
+          'street_number' => $contact->street_number,
+          'country' => $contact->country,
+          'state' => $contact->state,
+          'city' => $contact->city
+
+        ]);
         
     
     }
