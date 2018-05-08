@@ -1,5 +1,28 @@
+<style>
+        .selection{
+            width:100%;
+        }
+        .select2-container--default .select2-selection--single{
+            height: 2.5rem !important;
+            border-radius: unset !important;
+            border: 1px solid #dee3e7 !important;
+        }
+        .select2-selection__rendered{
+            height: 100% !important;
+            display: flex !important;
+            align-items: center !important;
+        }
+        .select2-container--default .select2-selection--single .select2-selection__placeholder{
+            color: #1c2e51 !important;
+        }
+        .select2-container--default .select2-selection--single .select2-selection__arrow{
+           top: 7px !important; 
+        }
+        </style>
+        
 
-<form action="/backend/new" method="POST" role="form">
+
+<form action="/backend/new" method="POST" role="form" enctype="multipart/form-data">
 
 {{ csrf_field() }}
 
@@ -49,13 +72,9 @@
 
         <div class="col-md-4 ">
 
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                
-                Upload
-            
-            </button>
-                            
-            @include('contacts.modal')
+            <label for="profile_image">
+                <input type="file" name="profile_image">
+            </label>
         
         </div>
     
@@ -132,7 +151,7 @@
     <div class="col-md-4 ">
             
          
-             <input class="form-control" id="birthdate" name="birthdate" placeholder="MM/DD/YYYY" type="text"/>
+             <input class="form-control" id="birthdate" name="birthdate" placeholder="YYY/MM/DD" type="text"/>
         
 
     </div>
@@ -389,7 +408,7 @@ function date(){
 var date_input=$('input[name="birthdate"]'); //our date input has the name "date"
 var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
 date_input.datepicker({
-    format: 'mm/dd/yyyy',
+    format: 'yyyy/mm/dd',
     container: container,
     todayHighlight: true,
     autoclose: true,
@@ -400,12 +419,14 @@ date_input.datepicker({
 
 function uploadimage(){
 
+    console.log("Holaaa");
+
     $("#profile_image").fileinput({
         showPreview: true,
         showUpload: true,
         elErrorContainer: '#kartik-file-errors',
         allowedFileExtensions: ["jpg", "png", "gif"],
-        uploadUrl: '/image/profile_image'
+        //uploadUrl: '/image/profile_image'
     });
 }
 
