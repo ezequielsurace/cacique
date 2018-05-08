@@ -1,3 +1,7 @@
+<div class="row">
+
+<div class="col-md-10">
+
 <div class="panel panel-primary">
   
 
@@ -8,6 +12,12 @@
                 <th style='text-align:center;'>Company</th>
                 <th style='text-align:center;'>Email</th>
                 <th style='text-align:center;'>Option</th>
+                <th style='text-align:center;'>Option</th>
+                <th style='text-align:center;'>Option</th>
+                <th style='text-align:center;'>Option</th>
+                <th style='text-align:center;'>Option</th>
+                <th style='text-align:center;'>Option</th>
+                <th style='text-align:center;'>Option</th>
             </thead>
             <tbody id="ranking"> </tbody>    
         </table>
@@ -15,20 +25,31 @@
 </div>
 
 
+</div>
+
 <script >
 
     
     function ranking(){
         var html = [];
     
-        $.get('/backend/city/1' , function(response){
+        $.get('/backend/show/contact' , function(response){
             
-            response.forEach( function(asesor){
+            response.forEach( function(contact){
 
 
                 
                 var tr = "<tr>";
-                tr+="<td style='text-align:center;'>"+ asesor.name +"</td>"
+                tr+="<td style='text-align:center;'>"+ contact.name +"</td>"
+                tr+="<td style='text-align:center;'>"+ contact.email +"</td>"
+                tr+="<td style='text-align:center;'>"+ contact.phone +"</td>"
+                tr+="<td style='text-align:center;'>"+ contact.phone_type +"</td>"
+                tr+="<td style='text-align:center;'>"+ contact.company +"</td>"
+                tr+="<td style='text-align:center;'>"+ contact.street_name +"</td>"
+                tr+="<td style='text-align:center;'>"+ contact.street_number +"</td>"
+                tr+="<td style='text-align:center;'>"+ contact.city +"</td>"
+                tr+="<td style='text-align:center;'>"+ contact.state +"</td>"
+                tr+="<td style='text-align:center;'>"+ contact.country +"</td>"
 
                 html.push(tr);
             });
@@ -46,6 +67,7 @@
     $(document).ready(function(){
         
         $("#show").addClass("active");
+        ranking();
         
 
         

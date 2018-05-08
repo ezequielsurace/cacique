@@ -24,7 +24,7 @@
                     <input type="checkbox" name="remember" id="remember" class="filled-in chk-col-cyan">
                     <label for="remember">Recordame</label>
                 </div>
-                <a class="btn btn-raised waves-effect bg-blue" id="iniciar">INICIAR</a> 
+                <a class="btn btn-raised waves-effect bg-blue" id="iniciar" href="/backend">INICIAR</a> 
                 <div class="text-left"> 
                     <a href="/reset" style="color: #457fca">Olvidé la contraseña</a> 
                 </div>

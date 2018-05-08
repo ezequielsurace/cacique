@@ -10,6 +10,7 @@ use App\Country;
 use App\Contact;
 use App\Address;
 use App\Phone;
+use Illuminate\Support\Facades\DB;
 
 class ContactsController extends Controller
 {
@@ -75,6 +76,34 @@ class ContactsController extends Controller
 
     
     	return back()->with('info','New Contact Add');
+
+
+    }
+
+    public function show()
+    {
+      $data = Contact::join('address','contact.address_id','=','address.id')
+          ->join('phone','phone.contact_id','=','contact.id')
+          ->join('phone_type','phone.phone_type_id','=','phone_type.id')
+          ->join('country','address.country_id','=','country.id')
+          ->join('state','address.state_id','=','state.id')
+          ->join('city','address.city_id','=','city.id')
+          ->join('company','company.id','=','contact.company_id')
+          ->select(DB::raw('contact.name as name,
+                            contact.email as email,
+                            phone.number as phone,
+                            phone_type.name as phone_type,
+                            company.name as company,
+                            address.street_name as street_name,
+                            address.street_number as street_number,
+                            country.name as country,
+                            state.name as state,
+                            city.name as city'))->get();
+
+
+      return $data; 
+
+         
 
 
     }
