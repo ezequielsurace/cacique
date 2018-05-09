@@ -51,7 +51,7 @@
 
     <div class="col-md-4 ">
         
-        <input type="text" class="form-control" name="name"  id="name"> 
+        <input type="text" class="form-control" name="name"  id="name" onkeypress="return onlyLetter(event)" onpaste="return false" maxlength="50"> 
     
     </div>
 </div>
@@ -97,7 +97,7 @@
     
         <div class="col-md-4 ">
             
-            <input type="text" class="form-control" name="email"  > 
+            <input type="email" class="form-control" name="email"  > 
         
         </div>
     </div>
@@ -174,7 +174,7 @@
 
     <div class="col-md-4">
 
-        <input type="text" class="form-control" name="phone" > 
+        <input type="text" class="form-control" name="phone" onkeypress="return onlyNumber(event)" onpaste="return false"> 
     
     </div>
 
@@ -228,7 +228,7 @@
     
         <div class="col-md-4">
     
-            <input type="text" class="form-control" name="street_name" id="" placeholder="" > 
+            <input type="text" class="form-control" name="street_name" id="street_name"  onkeypress="return onlyLetter(event)" onpaste="return false" maxlength="10"> 
         
         </div>
     
@@ -250,7 +250,7 @@
     
         <div class="col-md-4">
     
-            <input type="text" class="form-control" name="street_number" id="" placeholder="" > 
+            <input type="text" class="form-control" name="street_number" id="street_number" onkeypress="return onlyNumber(event)" onpaste="return false"> 
         
         </div>
     
@@ -361,15 +361,47 @@
 
 <script>
 
-function validateForm() {
-    var x = document.forms["myForm"]["name"].value;
-    if (x == "") {
-        alert("Name must be filled out");
-        
-        return false;
+
+
+function onlyLetter(e)
+{
+    key = e.key || e.which;
+
+    keyboard = String.fromCharCode(key).toLowerCase;
+
+    letter = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ ";
+
+    if(letter.indexOf(key)==-1)
+    {
+            return false;
     }
 }
 
+function onlyNumber(e)
+{
+    key = e.key || e.which;
+
+    keyboard = String.fromCharCode(key);
+
+    number = "0123456789";
+
+    specials = "8-37-38-46";
+
+    keyboard_special = false;
+
+    for(var i in specials)
+    {
+        if(key==specials[i])
+        {
+            keyboard_special = true;
+        }
+    }
+
+    if(number.indexOf(keyboard)==-1 && !keyboard_special)
+    {
+            return false;
+    }
+}
    
 function getstate(){
     
@@ -441,11 +473,6 @@ $(document).ready(function(){
             getcities();
             date();
 
-            $('#submit').click(function(event){
-
-                validateForm();
-                
-            })
             
         
 
