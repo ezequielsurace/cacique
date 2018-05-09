@@ -414,16 +414,17 @@ function getcities(){
     });
 }
 
-function date(){
+function date()
+{
 
-var date_input=$('input[name="birthdate"]'); //our date input has the name "date"
-var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
-date_input.datepicker({
-    format: 'yyyy/mm/dd',
-    container: container,
-    todayHighlight: true,
-    autoclose: true,
-
+    var date_input=$('input[name="birthdate"]'); //our date input has the name "date"
+    var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+    date_input.datepicker({
+            format: 'yyyy/mm/dd',
+            container: container,
+            todayHighlight: true,
+            autoclose: true,
+            endDate: new Date()
             });
 
 }
