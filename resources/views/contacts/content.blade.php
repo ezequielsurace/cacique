@@ -419,18 +419,6 @@ date_input.datepicker({
 
 }
 
-function uploadimage(){
-
-    console.log("Holaaa");
-
-    $("#profile_image").fileinput({
-        showPreview: true,
-        showUpload: true,
-        elErrorContainer: '#kartik-file-errors',
-        allowedFileExtensions: ["jpg", "png", "gif"],
-        //uploadUrl: '/image/profile_image'
-    });
-}
 
 $(document).ready(function(){
 
@@ -442,7 +430,6 @@ $(document).ready(function(){
             getstate();
             getcities();
             date();
-            //uploadimage();
         
 
             });

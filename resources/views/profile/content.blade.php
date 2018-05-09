@@ -13,7 +13,7 @@
           <div class="card-close">
             <div class="dropdown">
               <button type="button" id="closeCard2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-ellipsis-v"></i></button>
-              <div aria-labelledby="closeCard2" class="dropdown-menu dropdown-menu-right has-shadow"><a href="#" class="dropdown-item edit"> <i class="fa fa-pencil"></i>Edit</a><a href="#" class="dropdown-item edit"> <i class="fa fa-times"></i>Close</a></div>
+              <div aria-labelledby="closeCard2" class="dropdown-menu dropdown-menu-right has-shadow"><button id="edit" href="#" class="dropdown-item edit" value="{{$id}}"> <i class="fa fa-pencil"></i> Edit</button><button id="delete" href="#" class="dropdown-item edit" value="{{$id}}"> <i class="fa fa-user-times"></i> Delete</button></div>
             </div>
           </div>
           <div class="card-body text-center">
@@ -50,3 +50,40 @@
 <br>
 
 <br>
+
+
+<script>
+
+   
+  function deleteContact(){
+        
+        $("#delete").click(function(event){
+        
+          if(confirm("Are you sure you want to delete this contact?")){
+            
+            
+            $.get('/backend/delete'+'/'+event.currentTarget.attributes.value.nodeValue,function(response){
+
+
+      
+              });
+      
+              
+
+        }
+        else{
+            return false;
+        }
+
+            
+        });
+    }
+    
+    $(document).ready(function(){
+    
+        deleteContact();
+            
+    
+                });
+    
+    </script>

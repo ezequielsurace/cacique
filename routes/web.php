@@ -52,6 +52,8 @@ Route::group([ 'prefix' => 'backend' ], function(){
 
     Route::get('/city/{id}','StateController@getCities');
 
+    Route::get('/delete/{id}','ContactsController@delete');
+
 
     
 

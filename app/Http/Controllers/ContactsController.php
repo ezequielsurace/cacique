@@ -129,6 +129,25 @@ class ContactsController extends Controller
           'city' => $contact->city
 
         ]);
+
+      }
+
+
+
+    public function delete($id)
+    {
+        
+
+      
+      $address_id = Contact::where('id','=',$id)->select('address_id')->first();
+      
+      Address::where('id','=',$address_id)->delete();
+
+      Contact::where('id','=',$id)->delete();
+
+      Phone::where('user_id','=',$id);
+      
+      return true;
         
     
     }
