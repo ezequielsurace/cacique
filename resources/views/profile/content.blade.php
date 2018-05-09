@@ -64,8 +64,13 @@
             
             $.get('/backend/delete'+'/'+event.currentTarget.attributes.value.nodeValue,function(response){
 
+              if(response == "true" )
+              {
 
-      
+                window.location.replace("/backend/show");
+
+              }
+
               });
       
               

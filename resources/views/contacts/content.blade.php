@@ -22,7 +22,7 @@
         
 
 
-<form action="/backend/new" method="POST" role="form" enctype="multipart/form-data">
+<form action="/backend/new" method="POST" role="form" enctype="multipart/form-data" id="myForm">
 
 {{ csrf_field() }}
 
@@ -51,7 +51,7 @@
 
     <div class="col-md-4 ">
         
-        <input type="text" class="form-control" name="name"  > 
+        <input type="text" class="form-control" name="name"  id="name"> 
     
     </div>
 </div>
@@ -345,7 +345,7 @@
 <br>
             <div class="form-group">
              <div class="col-md-10 col-sm-offset-2">
-              <button class="btn btn-primary " name="submit" type="submit">
+              <button class="btn btn-primary " name="submit" type="submit" id="submit">
                Submit
               </button>
              </div>
@@ -360,6 +360,15 @@
 
 
 <script>
+
+function validateForm() {
+    var x = document.forms["myForm"]["name"].value;
+    if (x == "") {
+        alert("Name must be filled out");
+        
+        return false;
+    }
+}
 
    
 function getstate(){
@@ -430,6 +439,13 @@ $(document).ready(function(){
             getstate();
             getcities();
             date();
+
+            $('#submit').click(function(event){
+
+                validateForm();
+                
+            })
+            
         
 
             });

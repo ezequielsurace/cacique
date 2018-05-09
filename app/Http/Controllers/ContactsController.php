@@ -137,17 +137,23 @@ class ContactsController extends Controller
     public function delete($id)
     {
         
+    
+      
+      $address_id = Contact::where('id','=',$id)->select('address_id as id')->first();
 
+      $path = Contact::where('id','=',$id)->select('profile_image')->first();
+
+      Storage::delete($path->profile_image);
       
-      $address_id = Contact::where('id','=',$id)->select('address_id')->first();
-      
-      Address::where('id','=',$address_id)->delete();
+      Address::where('id','=',$address_id->id)->delete();
 
       Contact::where('id','=',$id)->delete();
 
-      Phone::where('user_id','=',$id);
+      Phone::where('contact_id','=',$id)->delete();
       
-      return true;
+      
+      
+      return "true";
         
     
     }
