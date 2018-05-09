@@ -344,7 +344,7 @@
 
 <br>
             <div class="form-group">
-             <div class="col-sm-10 col-sm-offset-2">
+             <div class="col-md-10 col-sm-offset-2">
               <button class="btn btn-primary " name="submit" type="submit">
                Submit
               </button>
@@ -353,6 +353,10 @@
 
 </form>
 
+
+<br>
+
+<br>
 
 
 <script>

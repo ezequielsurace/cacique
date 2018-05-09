@@ -36,7 +36,6 @@
                 <th style='text-align:center;'>City</th>
                 <th style='text-align:center;'>State</th>
                 <th style='text-align:center;'>Country</th>
-                <th style='text-align:center;'>Option</th>
             </thead>
             <tbody id="ranking"> </tbody>    
         </table>
@@ -69,7 +68,6 @@
                 tr+="<td style='text-align:center;'>"+ contact.city +"</td>"
                 tr+="<td style='text-align:center;'>"+ contact.state +"</td>"
                 tr+="<td style='text-align:center;'>"+ contact.country +"</td>"
-                tr+="<td style='text-align:center;'>"+ "update" +"</td>"
 
                 html.push(tr);
             });

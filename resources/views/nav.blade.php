@@ -24,7 +24,7 @@
           <div class="sidebar-header d-flex align-items-center">
             <div class="avatar"><img src="https://thumbs.dreamstime.com/b/american-native-indian-chief-mascot-head-graphic-22153721.jpg" alt="..." class="img-fluid rounded-circle"></div>
             <div class="title">
-              <h1 class="h4">Mark Stephen</h1>
+              <h1 class="h4">Admin</h1>
             </div>
           </div>
           <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
