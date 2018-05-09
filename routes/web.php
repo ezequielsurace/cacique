@@ -30,6 +30,13 @@ Route::group([ 'prefix' => 'backend' ], function(){
 
 });
 
+Route::get('/dashboard', function () {
+
+    return view('dashboard/index');
+
+
+});
+
     Route::get('/show', function () {
 
     return view('show/index');

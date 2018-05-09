@@ -29,7 +29,7 @@
           </div>
           <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
           <ul class="list-unstyled">
-                    <li id="chart"><a href="charts.html"> <i class="fa fa-bar-chart"></i>Dashboard</a></li>
+                    <li id="chart"><a href="/backend/dashboard"> <i class="fa fa-bar-chart"></i>Dashboard</a></li>
                         <li id="show"><a href="/backend/show"> <i class="fa fa-eye"></i>Show</a></li>
                         <li id="new"><a href="/backend/new"> <i class="fa fa-user-plus"></i>New</a></li>
                     <li><a href="login.html"> <i class="fa fa-cog"></i>Login page </a></li>

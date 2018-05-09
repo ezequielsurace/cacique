@@ -51,7 +51,7 @@
 
     <div class="col-md-4 ">
         
-        <input type="text" class="form-control" name="name"  id="name" onkeypress="return onlyLetter(event)" onpaste="return false" maxlength="50"> 
+        <input type="text" class="form-control" name="name"  id="name" onkeypress="return onlyLetter(event)" onpaste="return false" maxlength="50" required> 
     
     </div>
 </div>
@@ -73,7 +73,7 @@
         <div class="col-md-4 ">
 
             <label for="profile_image">
-                <input type="file" name="profile_image">
+                <input type="file" name="profile_image" required>
             </label>
         
         </div>
@@ -97,7 +97,7 @@
     
         <div class="col-md-4 ">
             
-            <input type="email" class="form-control" name="email"  > 
+            <input type="email" class="form-control" name="email" required> 
         
         </div>
     </div>
@@ -151,7 +151,7 @@
     <div class="col-md-4 ">
             
          
-             <input class="form-control" id="birthdate" name="birthdate" placeholder="YYY/MM/DD" type="text"/>
+             <input class="form-control" id="birthdate" name="birthdate" placeholder="YYY/MM/DD" type="text" required/>
         
 
     </div>
@@ -174,7 +174,7 @@
 
     <div class="col-md-4">
 
-        <input type="text" class="form-control" name="phone" onkeypress="return onlyNumber(event)" onpaste="return false"> 
+        <input type="text" class="form-control" name="phone" onkeypress="return onlyNumber(event)" onpaste="return false" required> 
     
     </div>
 
@@ -196,7 +196,7 @@
 
         <div class="col-md-4 ">
 
-            <select class="select2" name="phone_type_id" >
+            <select class="select2" name="phone_type_id" required >
 
                 <option selected="selected"></option>
 
@@ -228,7 +228,7 @@
     
         <div class="col-md-4">
     
-            <input type="text" class="form-control" name="street_name" id="street_name"  onkeypress="return onlyLetter(event)" onpaste="return false" maxlength="10"> 
+            <input type="text" class="form-control" name="street_name" id="street_name"  onkeypress="return onlyLetter(event)" onpaste="return false" maxlength="50" required> 
         
         </div>
     
@@ -250,7 +250,7 @@
     
         <div class="col-md-4">
     
-            <input type="text" class="form-control" name="street_number" id="street_number" onkeypress="return onlyNumber(event)" onpaste="return false"> 
+            <input type="text" class="form-control" name="street_number" id="street_number" onkeypress="return onlyNumber(event)" onpaste="return false" required> 
         
         </div>
     
@@ -272,7 +272,7 @@
 
         <div class="col-md-4 ">
 
-            <select class="select2" name="country_id" id="country">
+            <select class="select2" name="country_id" id="country" required>
                 
                 <option selected="selected"></option>
 
@@ -304,7 +304,7 @@
 
         <div class="col-md-4 ">
 
-            <select class="select2" name="state_id" id="state" >
+            <select class="select2" name="state_id" id="state" required>
 
 
             </select>
@@ -329,7 +329,7 @@
 
     <div class="col-md-4 ">
 
-        <select class="select2" name="city_id" id="city" >
+        <select class="select2" name="city_id" id="city" required>
 
 
         </select>

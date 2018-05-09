@@ -32,6 +32,7 @@ class ContactsController extends Controller
       
       $address = new Address();
 
+      
       $address->street_name = $request->street_name;
 
       $address->street_number = $request->street_number;
@@ -73,6 +74,8 @@ class ContactsController extends Controller
       $phone->contact_id = $contact_id;
 
       $phone->save();
+
+      
 
     
     	return back()->with('info','New Contact Add');
