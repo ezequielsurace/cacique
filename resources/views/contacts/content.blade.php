@@ -174,7 +174,7 @@
 
     <div class="col-md-4">
 
-        <input type="text" class="form-control" name="phone" onkeypress="return onlyNumber(event)" onpaste="return false" required> 
+        <input type="text" class="form-control" name="phone" onkeypress="return onlyNumber(event)" onpaste="return false" maxlength="9" required> 
     
     </div>
 
@@ -250,7 +250,7 @@
     
         <div class="col-md-4">
     
-            <input type="text" class="form-control" name="street_number" id="street_number" onkeypress="return onlyNumber(event)" onpaste="return false" required> 
+            <input type="text" class="form-control" name="street_number" id="street_number" onkeypress="return onlyNumber(event)" onpaste="return false" maxlength="9" required> 
         
         </div>
     
@@ -381,23 +381,11 @@ function onlyNumber(e)
 {
     key = e.key || e.which;
 
-    keyboard = String.fromCharCode(key);
 
     number = "0123456789";
+    
 
-    specials = "8-37-38-46";
-
-    keyboard_special = false;
-
-    for(var i in specials)
-    {
-        if(key==specials[i])
-        {
-            keyboard_special = true;
-        }
-    }
-
-    if(number.indexOf(keyboard)==-1 && !keyboard_special)
+    if(number.indexOf(key)==-1)
     {
             return false;
     }
