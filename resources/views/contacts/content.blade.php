@@ -228,7 +228,7 @@
     
         <div class="col-md-4">
     
-            <input type="text" class="form-control" name="street_name" id="street_name"  onkeypress="return onlyLetter(event)" onpaste="return false" maxlength="50" required> 
+            <input type="text" class="form-control" name="street_name" id="street_name"  onkeypress="return letterAndNumber(event)" onpaste="return false" maxlength="50" required> 
         
         </div>
     
@@ -370,6 +370,20 @@ function onlyLetter(e)
     keyboard = String.fromCharCode(key).toLowerCase;
 
     letter = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ ";
+
+    if(letter.indexOf(key)==-1)
+    {
+            return false;
+    }
+}
+
+function letterAndNumber(e)
+{
+    key = e.key || e.which;
+
+    keyboard = String.fromCharCode(key).toLowerCase;
+
+    letter = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ0123456789 ";
 
     if(letter.indexOf(key)==-1)
     {
